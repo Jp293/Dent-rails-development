@@ -1,0 +1,2 @@
+class Dent < ApplicationRecord
+end
