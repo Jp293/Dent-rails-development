@@ -1,9 +1,9 @@
-class DentsController < ApplicationController
+class DentsController < ProtectedController
   before_action :set_dent, only: [:show, :update, :destroy]
-
+  attr_reader :current_ser
   # GET /dents
   def index
-    @dents = Dent.all
+    @dents = current_user.dents.order(id: :desc)
 
     render json: @dents
   end
@@ -15,7 +15,7 @@ class DentsController < ApplicationController
 
   # POST /dents
   def create
-    @dent = Dent.new(dent_params)
+    @dent = current_user.dents.create(dent_params)
 
     if @dent.save
       render json: @dent, status: :created, location: @dent
@@ -41,7 +41,7 @@ class DentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dent
-      @dent = Dent.find(params[:id])
+      @dent = current_user.dents.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
