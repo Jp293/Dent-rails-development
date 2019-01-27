@@ -53,7 +53,7 @@
 
 ## ERD (entity relationship diagram)
 
-![ERD Image]('./public/CapstoneERD.png')
+![ERD Image]('https://i.imgur.com/4uufOw1.png')
 
 
 
