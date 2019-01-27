@@ -20,6 +20,8 @@
 * Ruby on Rails
 * PostgreSQL
 * Heroku
+* Git
+* GitHub
 
 ## Path Catalogues:
 
